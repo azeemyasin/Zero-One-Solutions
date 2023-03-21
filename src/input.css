@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    .banner-card {
+      @apply object-cover w-full 2xl:h-[50rem] h-[40rem];
+    }
+    .footer-links {
+      @apply font-montserrat 2xl:text-base xl:text-sm sm:text-base text-sm font-bold text-[#131313] sm:text-start text-center;
+    }
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  
+  .show {display: block;}
+  
+  /* Banner style */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @media only screen and (max-width: 300px) {
+    .text {
+      font-size: 11px;
+    }
+  }
+  
+  .box-shadow {
+    box-shadow: 0 0 30px #bdb9b985;
+  }
+  
+  /* Accordions style */
+  .c-accordion__entry {
+    border-top: 1px solid #c4c2c2;
+    padding: 5px 0 5px;
+  }
+  
+  .c-accordion__entry-title {
+    position: relative;
+  }
+  
+  .c-accordion__entry-header-link {
+    display: block;
+    padding: 25px 45px 25px 0;
+    cursor: pointer;
+  }
+  
+  .c-accordion__entry-header-link::before {
+    color: rebeccapurple;
+  }
+  
+  .c-accordion__entry-body {
+    display: none;
+  }
+  
+  .c-accordion__entry-contents {
+    padding: 5px 0;
+    font-size: 1.125em;
+  }
+  
+  .c-accordion__entry-header-icon-wrapper {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    display: block;
+    transform: translate(0, -50%);
+    transition: all 0.4s;
+  }
+  
+  .c-accordion__entry-header-icon {
+    display: block;
+  }
+  
+  .c-accordion__entry.is-expanded
+    > .c-accordion__entry-title
+    > .c-accordion__entry-header-link
+    > .c-accordion__entry-header-icon-wrapper {
+    transform: translate(0, -50%) rotate(180deg);
+  }
+  
+  .footer-bg {
+    background-image: linear-gradient(to bottom right, #4297cd, #74c195);
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Footer  Checkbox */
+  .form-group input {
+    padding: 0;
+    height: initial;
+    width: initial;
+    display: none;
+    cursor: pointer;
+  }
+  
+  .form-group label {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .form-group label:before {
+    content: "";
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+      inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 12px;
+  }
+  
+  .form-group input:checked + label:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 9px;
+    width: 6px;
+    height: 14px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  
